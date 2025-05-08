@@ -25,7 +25,7 @@ trips/database/createDB.txt
 That data base is empty. It will fill as you upload photos and routes or if you write your own database script to fill it.
 
 <H3>Photo APIS:</H3><br />
-GET http://your_host:8080/api/v1/locations<br />
+GET http://<your_host>:8080/api/v1/locations<br />
 Shows all the locations you have photos at.<br />
 
 POST http://<your_host>:8080/api/v1/files/upload<br />
@@ -49,7 +49,7 @@ If you have a photo with Jane and Mike, your name, Mike and Jane will show up as
 If you have 77 photos of Mike, his name will only appear once.
 
 <H3>Route APIs:</H3><br />
-GET http://your_host_gav:8080/api/v1/stops/years<br />
+GET http://<your_host>:8080/api/v1/stops/years<br />
 list of years of the trips in the route table of the data base.
 
 GET http://<your_host>:8080/api/v1/stops/dates/byyear/2017<br />
