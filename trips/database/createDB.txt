@@ -1,0 +1,28 @@
+--Google maps latitude first, followed by longitude
+CREATE TABLE LOCATIONS (
+    id int PRIMARY KEY,	
+    name varchar(255),
+    latitude varchar(15),
+    longitude varchar(15),
+    description varchar(255)
+)
+
+CREATE TABLE PHOTOS(
+    id int IDENTITY(1,1) PRIMARY KEY,
+	locationID int NOT NULL,	
+	date DATE NOT NULL, -- format YYYY-MM-DD,
+	person varchar(100),
+	filename varchar(255) NOT NULL,	
+	--CONSTRAINT PK_Photo PRIMARY KEY (date, filename)
+	CONSTRAINT UQ_filename_date UNIQUE (filename, date_taken)
+)
+
+CREATE TABLE STOPS(
+    id int IDENTITY(1,1) PRIMARY KEY,
+	date DATE, -- format YYYY-MM-DD,
+    locID int,
+	dayorder int,		
+	marker BIT DEFAULT 1,
+	--PRIMARY KEY (date, locID, dayorder)--, --because I can come back to same place in same day
+	FOREIGN KEY (locID) REFERENCES Locations(id)
+)
