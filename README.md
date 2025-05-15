@@ -23,7 +23,7 @@ I know location can be stored in the photo itself, but I turned that option off,
 This was done using MSSql and the table create script is located in:
 trips/database/createDB.txt
 That data base is empty. It will fill as you upload photos and routes or if you write your own database script to fill it.
-![Project Screenshot](trips/docs/db-diagram.gif)
+<IMG src="trips/docs/db-diagram.gif" />
 
 <H3>Photo APIS:</H3><br />
 GET http://<your_host>:8080/api/v1/locations<br />
