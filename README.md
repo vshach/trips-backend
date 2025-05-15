@@ -24,6 +24,10 @@ This was done using MSSql and the table create script is located in:
 trips/database/createDB.txt
 That data base is empty. It will fill as you upload photos and routes or if you write your own database script to fill it.
 <IMG src="trips/docs/db-diagram.gif" />
+Notes:<br / >
+Relationship between STOPS and LOCATIONS is in reality many to many, with column locId in table STOPS linking to column id of LOCATIONS,
+But that would create a circular dependency that I am not interested in.
+In a simular fashion, yes, PHOTOS should be linked to LOCATIONS - through locationId column. But I don't need JPA to automatically data from there and send it over network.
 
 <H3>Photo APIS:</H3><br />
 GET http://<your_host>:8080/api/v1/locations<br />
